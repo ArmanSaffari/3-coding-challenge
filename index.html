@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css"
+    />
     <script src="https://cdn.tailwindcss.com/3.3.0"></script>
   </head>
   <body>
-
     <!-- banner -->
     <section
       class="bg-center bg-no-repeat bg-[url('https://source.unsplash.com/70YxSTWa2Zw')] bg-cover bg-gray-700 bg-blend-multiply"
@@ -45,7 +45,8 @@
             <option value="laliga" class="text-gray-800">La Liga</option>
             <option value="seriea" class="text-gray-800">Serie A</option>
           </select>
-          <button id="goButton"
+          <button
+            id="goButton"
             class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
           >
             Go
@@ -56,51 +57,109 @@
 
     <div class="container mx-auto my-12">
       <div class="mx-auto block m-12">
-        <h1 
+        <h1
           class="text-4xl font-bold text-center mb-8 text-orange-600"
           id="mainTitle"
-          >Premier League</h1>
+        >
+          Premier League
+        </h1>
       </div>
 
-      <!-- table -->
-      <h3 class="text-center text-xl font-bold">Ranking Table</h3>
-      <div id="table"
-        class="mx-auto md:w-full lg:w-3/4 mx-autorelative overflow-x-auto mb-10">
-        <table class="w-full text-sm text-left text-gray-500">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-400">
-            <tr>
-              <th scope="col" class="px-3 py-3"></th>
-              <th scope="col" class="px-3 py-3">Team</th>
-              <th scope="col" class="px-3 py-3">Points</th>
-              <th scope="col" class="px-3 py-3">Played</th>
-              <th scope="col" class="px-3 py-3">Winned</th>
-              <th scope="col" class="px-3 py-3">Loosed</th>
-              <th scope="col" class="px-3 py-3">Tie</th>
-              <th scope="col" class="px-3 py-3">Goal Dif.</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            
-          </tbody>
-        </table>
-      </div>
-      <!-- news -->
-      <div>
+      <!-- Tabs -->
+      <ul
+        class="md:w-full lg:w-3/4 mx-auto mb-5 flex list-none flex-row flex-wrap border-b border-gray-200 pl-0"
+        role="tablist"
+        data-te-nav-ref
+      >
+        <li role="presentation">
+          <a
+            href="#tabs-table"
+            class="block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-orange-600 data-[te-nav-active]:text-orange-600"
+            data-te-toggle="pill"
+            data-te-target="#tabs-table"
+            data-te-nav-active
+            role="tab"
+            aria-controls="tabs-table"
+            aria-selected="true"
+            >Ranking Table</a
+          >
+        </li>
+        <li role="presentation">
+          <a
+            href="#tabs-news"
+            class="block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-orange-600 data-[te-nav-active]:text-orange-600"
+            data-te-toggle="pill"
+            data-te-target="#tabs-news"
+            role="tab"
+            aria-controls="tabs-news"
+            aria-selected="false"
+            >News</a
+          >
+        </li>
+      </ul>
 
-      </div class="my-12">
-        <h3 class="text-3xl font-bold text-center mb-8">News</h3>
-        <div id="news" 
-        class="w-full grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+      <!--Tabs content-->
+      <div class="mb-6">
+        <div
+          class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+          id="tabs-table"
+          role="tabpanel"
+          aria-labelledby="tabs-table-tab"
+          data-te-tab-active
+        >
+          <!-- table -->
+          <h3 class="text-center text-xl font-bold">Ranking Table</h3>
+          <div
+            id="table"
+            class="mx-auto md:w-full lg:w-3/4 mx-autorelative overflow-x-auto mb-10"
+          >
+            <table class="w-full text-sm text-left text-gray-500">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-400">
+                <tr>
+                  <th scope="col" class="px-3 py-3"></th>
+                  <th scope="col" class="px-3 py-3">Team</th>
+                  <th scope="col" class="px-3 py-3">Points</th>
+                  <th scope="col" class="px-3 py-3">Played</th>
+                  <th scope="col" class="px-3 py-3">Winned</th>
+                  <th scope="col" class="px-3 py-3">Loosed</th>
+                  <th scope="col" class="px-3 py-3">Tie</th>
+                  <th scope="col" class="px-3 py-3">Goal Dif.</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div
+          class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+          id="tabs-news"
+          role="tabpanel"
+          aria-labelledby="tabs-news-tab"
+        >
+          <!-- news -->
+          <div class="my-12 md:w-full lg:w-3/4 mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-8">News</h3>
+            <div
+              id="news"
+              class="w-full grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1"
+            ></div>
+          </div>
         </div>
       </div>
 
       <!-- Newsletter -->
       <div class="sm:w-full md:w-3/4 lg:w-1/2 mx-auto my-12">
-        <form 
-        id="subscriptionForm"
-        class="border border-gray-600 rounded-lg p-6 pb-12 bg-gray-400/25 shadow">
+        <hr
+          class="my-24 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100"
+        />
+
+        <form
+          id="subscriptionForm"
+          class="border border-gray-600 rounded-lg p-6 pb-12 bg-gray-400/25 shadow"
+        >
           <h3 class="text-xl font-bold mb-3">Sign for our Newsletter!</h3>
-          
+
           <div class="relative z-0 w-full mb-6 group">
             <input
               type="email"
@@ -122,7 +181,6 @@
           >
             Submit
           </button>
-          
         </form>
       </div>
     </div>
