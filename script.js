@@ -77,6 +77,8 @@ async function createTable (data) {
   const tableBody = document.getElementById("tableBody");
   let tableRow 
   if (data && tableBody) {
+
+    tableBody.innerHTML = ''
     data.forEach((row, index) => {
       tableRow = document.createElement('tr');
       tableRow.classList= (index % 2) ? "bg-gray-50 border-b" : "bg-white border-b"
