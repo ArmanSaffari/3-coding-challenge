@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footbal Fanatics</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  </head>
+  <body>
+
+    <!-- banner -->
+    <section
+      class="bg-center bg-no-repeat bg-[url('https://source.unsplash.com/70YxSTWa2Zw')] bg-cover bg-gray-700 bg-blend-multiply"
+    >
+      <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+        <h1
+          class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
+        >
+          Footbal Fanatics
+        </h1>
+        <p
+          class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"
+        >
+          Top Footbal News form all over the world!
+        </p>
+        <div
+          class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+        >
+          <label
+            for="countries"
+            class="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
+            >Select the league</label
+          >
+          <select
+            id="selectLeague"
+            class="block sm:w-full md:w-1/2 lg:w-1/4 p-2.5 bg-transparent border border-gray-300 text-white text-sm rounded-lg focus:ring-white-500 focus:border-white-500"
+          >
+            <option selected value="premierleague" class="text-gray-800">
+              Premier League
+            </option>
+            <option value="laliga" class="text-gray-800">La Liga</option>
+            <option value="seriea" class="text-gray-800">Serie A</option>
+          </select>
+          <button id="goButton"
+            class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
+          >
+            Go
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mx-auto my-12">
+      <div class="mx-auto block m-12">
+        <h1 
+          class="text-4xl font-bold text-center mb-8 text-orange-600"
+          id="mainTitle"
+          >Premier League</h1>
+      </div>
+
+      <!-- table -->
+      <h3 class="text-center text-xl font-bold">Ranking Table</h3>
+      <div id="table"
+        class="mx-auto md:w-full lg:w-3/4 mx-autorelative overflow-x-auto mb-10">
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-400">
+            <tr>
+              <th scope="col" class="px-3 py-3"></th>
+              <th scope="col" class="px-3 py-3">Team</th>
+              <th scope="col" class="px-3 py-3">Points</th>
+              <th scope="col" class="px-3 py-3">Played</th>
+              <th scope="col" class="px-3 py-3">Winned</th>
+              <th scope="col" class="px-3 py-3">Loosed</th>
+              <th scope="col" class="px-3 py-3">Tie</th>
+              <th scope="col" class="px-3 py-3">Goal Dif.</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            
+          </tbody>
+        </table>
+      </div>
+      <!-- news -->
+      <div>
+
+      </div class="my-12">
+        <h3 class="text-3xl font-bold text-center mb-8">News</h3>
+        <div id="news" 
+        class="w-full grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sm:w-full md:w-3/4 lg:w-1/2 mx-auto my-12">
+        <form 
+        id="subscriptionForm"
+        class="border border-gray-600 rounded-lg p-6 pb-12 bg-gray-400/25 shadow">
+          <h3 class="text-xl font-bold mb-3">Sign for our Newsletter!</h3>
+          
+          <div class="relative z-0 w-full mb-6 group">
+            <input
+              type="email"
+              name="emailAddress"
+              id="emailAddress"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-orange-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_email"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-orange-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Email address</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="text-orange-600 hover:text-white float-right bg-transparent hover:bg-orange-600 border border-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          >
+            Submit
+          </button>
+          
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
